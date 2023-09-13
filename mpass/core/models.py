@@ -2,12 +2,8 @@ from django.db import models
 from django.utils import timezone
 
 
-def get_image_path(instance, file):
-    return f'photos/pass-{instance.mpass.id}/{file}'
-
-
 DIFFICULTY = [
-    ('None', 'Неизвестно'),
+    ('00', 'Неизвестно'),
     ('1A', '1А'),
     ('1B', '1Б'),
     ('2А', '2А'),
@@ -28,7 +24,7 @@ class Users(models.Model):
     phone = models.CharField(max_length=50)
     surname = models.CharField(max_length=100)
     firstname = models.CharField(max_length=100)
-    patronymic = models.CharField(max_length=100)
+    patronymic = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return f"{self.surname} {self.email}"
@@ -58,17 +54,35 @@ class Coords(models.Model):
 
 class Images(models.Model):
     name = models.CharField(max_length=255, blank=True)
-    photo = models.ImageField(upload_to=get_image_path, blank=True, null=True)
+    photos = models.TextField(blank=True)
 
 
 class PerevalAdded(models.Model):
     beautyTitle = models.CharField(max_length=255, blank=True)
     title = models.CharField(max_length=255)
-    other_titles = models.CharField(ax_length=255, blank=True)
+    other_titles = models.CharField(max_length=255, blank=True)
     connect = models.CharField(max_length=255, blank=True)
     difficulty = models.ForeignKey(DifficultyLevels, on_delete=models.CASCADE, blank=True)
-    photos = models.ManyToManyField(Images, on_delete=models.CASCADE, default=None, blank=True)
+    photos = models.ForeignKey(Images, on_delete=models.CASCADE, blank=True)
     add_time = models.DateTimeField(default=timezone.now, editable=False)
     coords = models.OneToOneField(Coords, on_delete=models.CASCADE, blank=True)
     author = models.ForeignKey(Users, on_delete=models.CASCADE)
     status = models.CharField(choices=STATUS, max_length=1, default='1')
+
+    def __str__(self):
+        return self.title
+
+
+class ActivityTypes(models.Model):
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+
+class Areas(models.Model):
+    id_parent = models.ForeignKey('self', on_delete=models.CASCADE, default=1, blank=True)
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
