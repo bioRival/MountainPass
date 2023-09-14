@@ -30,19 +30,6 @@ class Users(models.Model):
         return f"{self.surname} {self.email}"
 
 
-class DifficultyLevels(models.Model):
-    spring = models.CharField(max_length=2, choices=DIFFICULTY)
-    summer = models.CharField(max_length=2, choices=DIFFICULTY)
-    autumn = models.CharField(max_length=2, choices=DIFFICULTY)
-    winter = models.CharField(max_length=2, choices=DIFFICULTY)
-
-    def __str__(self):
-        return f'SPRING: {self.spring},\n' \
-               f'SUMMER: {self.summer},\n' \
-               f'AUTUMN: {self.autumn},\n' \
-               f'WINTER: {self.winter}'
-
-
 class Coords(models.Model):
     latitude = models.FloatField(blank=True)
     longitude = models.FloatField(blank=True)
@@ -54,19 +41,25 @@ class Coords(models.Model):
 
 class Images(models.Model):
     name = models.CharField(max_length=255, blank=True)
-    photos = models.TextField(blank=True)
+    photo = models.TextField(blank=True)
 
 
 class PerevalAdded(models.Model):
-    beautyTitle = models.CharField(max_length=255, blank=True)
+    beauty_title = models.CharField(max_length=255, blank=True)
     title = models.CharField(max_length=255)
     other_titles = models.CharField(max_length=255, blank=True)
+
     connect = models.CharField(max_length=255, blank=True)
-    difficulty = models.ForeignKey(DifficultyLevels, on_delete=models.CASCADE, blank=True)
-    photos = models.ForeignKey(Images, on_delete=models.CASCADE, blank=True)
+    photos = models.ManyToManyField(Images, blank=True)
     add_time = models.DateTimeField(default=timezone.now, editable=False)
     coords = models.OneToOneField(Coords, on_delete=models.CASCADE, blank=True)
     author = models.ForeignKey(Users, on_delete=models.CASCADE)
+
+    spring = models.CharField(max_length=2, choices=DIFFICULTY, default='00')
+    summer = models.CharField(max_length=2, choices=DIFFICULTY, default='00')
+    autumn = models.CharField(max_length=2, choices=DIFFICULTY, default='00')
+    winter = models.CharField(max_length=2, choices=DIFFICULTY, default='00')
+
     status = models.CharField(choices=STATUS, max_length=1, default='1')
 
     def __str__(self):
