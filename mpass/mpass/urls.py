@@ -25,7 +25,7 @@ router = routers.DefaultRouter()
 router.register(r'users', UsersViewset)
 router.register(r'coordinates', CoordsViewset)
 router.register(r'photos', ImagesViewset)
-router.register(r'pereval_added', PerevalAddedViewset)
+router.register(r'submitData', PerevalAddedViewset)
 router.register(r'activity_types', ActivityTypesViewset)
 router.register(r'areas', AreasViewset)
 
@@ -33,5 +33,5 @@ router.register(r'areas', AreasViewset)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
