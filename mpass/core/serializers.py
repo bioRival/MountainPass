@@ -37,12 +37,15 @@ class PerevalAddedSerializer(serializers.ModelSerializer):
         photos_data = validated_data.pop('photos')
         coords_data = validated_data.pop('coords')
 
+        # Searches user by Email, if they exist - fetches the instance, if don't - creates a new one.
+        # "created" bool variable won't be used later, it's just a requirement for ger_or_create()
         author, created = Users.objects.get_or_create(email=author_data['email'], defaults={**author_data})
 
         coords = Coords.objects.create(**coords_data)
 
         mpass = PerevalAdded.objects.create(**validated_data, author=author, coords=coords)
 
+        # Photos, if any, are tied to this instance by ManyToMany link
         if photos_data:
             for photo in photos_data:
                 name = photo.pop('name')

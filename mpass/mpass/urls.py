@@ -25,7 +25,7 @@ router = routers.DefaultRouter()
 router.register(r'users', UsersViewset)
 router.register(r'coordinates', CoordsViewset)
 router.register(r'photos', ImagesViewset)
-router.register(r'pereval_added', PerevalAddedViewset)
+router.register(r'submitData', PerevalAddedViewset)
 router.register(r'activity_types', ActivityTypesViewset)
 router.register(r'areas', AreasViewset)
 
