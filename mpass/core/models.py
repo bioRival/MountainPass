@@ -51,7 +51,7 @@ class PerevalAdded(models.Model):
 
     connect = models.CharField(max_length=255, blank=True)
     photos = models.ManyToManyField(Images, blank=True)
-    add_time = models.DateTimeField(default=timezone.now, editable=False)
+    add_time = models.DateTimeField(auto_now_add=True)
     coords = models.OneToOneField(Coords, on_delete=models.CASCADE, blank=True)
     author = models.ForeignKey(Users, on_delete=models.CASCADE)
 
