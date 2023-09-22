@@ -1,5 +1,6 @@
 from .models import Users, Coords, Images, PerevalAdded, ActivityTypes, Areas, DIFFICULTY, STATUS
 from rest_framework import serializers
+from drf_writable_nested import WritableNestedModelSerializer
 
 
 class UsersSerializer(serializers.ModelSerializer):
@@ -16,13 +17,13 @@ class CoordsSerializer(serializers.ModelSerializer):
         fields = ['id', 'latitude', 'longitude', 'height', ]
 
 
-class ImagesSerializer(serializers.ModelSerializer):
+class ImagesSerializer(WritableNestedModelSerializer):
     class Meta:
         model = Images
         fields = ['id', 'name', 'photo', ]
 
 
-class PerevalAddedSerializer(serializers.ModelSerializer):
+class PerevalAddedSerializer(WritableNestedModelSerializer):
     author = UsersSerializer()
     photos = ImagesSerializer(many=True)
     coords = CoordsSerializer()
@@ -55,6 +56,25 @@ class PerevalAddedSerializer(serializers.ModelSerializer):
 
         mpass.save()
         return mpass
+
+    def validate(self, data):
+        if self.instance is not None:
+            author = self.instance.author
+            author_data = data.get('author')
+            fields_check = [
+                author.surname != author_data['surname'],
+                author.firstname != author_data['firstname'],
+                author.patronymic != author_data['patronymic'],
+                author.phone != author_data['phone'],
+                author.email != author_data['email'],
+            ]
+            if author_data is not None and any(fields_check):
+                raise serializers.ValidationError(
+                    {
+                        'error': 'Cant edit user information',
+                    }
+                )
+        return data
 
 
 class ActivityTypesSerializer(serializers.ModelSerializer):
