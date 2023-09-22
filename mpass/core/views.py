@@ -31,6 +31,14 @@ class PerevalAddedViewset(viewsets.ModelViewSet):
    def get(self, request, *args, **kwargs):
       return self.retrieve(request, *args, **kwargs)
 
+   def get_queryset(self):
+      queryset = PerevalAdded.objects.all()
+      email_param = self.request.query_params.get('user__email', None)
+      print(f"test email_param={email_param} ")
+      if email_param is not None:
+         queryset = queryset.filter(author__email=email_param)
+      return queryset
+
    def partial_update(self, request, pk=None, *args, **kwargs):
       mpass = self.get_object()
       if mpass.status == '1':
