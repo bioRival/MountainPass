@@ -25,6 +25,13 @@ class ImagesViewset(viewsets.ModelViewSet):
 
 
 class PerevalAddedViewset(viewsets.ModelViewSet):
+   """
+   Information recieved about a mountain pass from a user
+   GET - returns an insatance if primary key was given, example: /submitData/2
+   GET_QUERYSET - takes parameter user__email and returns all instances created by a user with given email,
+      example: /submitData/?user__email=NormanJaydenFBI@gmail.com
+   PARTIAL_UPDATE - edit an instance with a given primary key, not allowed to edit user data, example: /submitData/2
+   """
    queryset = PerevalAdded.objects.all()
    serializer_class = PerevalAddedSerializer
 
