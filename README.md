@@ -20,10 +20,22 @@ You want to fill up your tables. In browser, go to **http://127.0.0.1:8000/admin
 > login: biorival\
 > password: jenga
 Fill up Activity types with what fits you, examples: "on foot", "bike", "climbing"\
-Fill up Areas with a name of each region you want to keep track off, examples: "Himalayas", "Alps", "Umbrail Pass"\
+Fill up Areas with a name of each region you want to keep track off, examples: "Himalayas", "Alps", "Umbrail Pass"
 
-Whoever send data from their phone, will send it to **http://127.0.0.1:8000/submitData/**, this will usually influence table PerevalAdded
+Whoever send data from their phone, will send it to **http://127.0.0.1:8000/submitData/**, this will usually influence table PerevalAdded\
+It consists of:
+beauty_title - prefix to a title, if necessary
+title - title of a mountain pass or other area
+other_titles - alternative title or some descriptors, if necessary, such as (north-west) or (far away)
+connect - a mystery, something you shouldn't touch
+spring
+summer
+autumn
+winter
+
+
 Here's a few options API can do:
+submitData/ POST - if sent with valid information, will save 
 
 
 superuser: biorival
