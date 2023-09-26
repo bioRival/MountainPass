@@ -32,8 +32,10 @@ spring - difficulty of moving through the area during respective seasons, possib
 summer - same as above\
 autumn - same as above\
 winter - same as above\
-status - possible choices: new, pending, accepted, rejected. When recieved from a user, by default it's - new. Later you can read the information and change status to what you see fit. \
-____After this, any attempts to edit it through API means is locked.
+status - possible choices: new, pending, accepted, rejected. When recieved from a user, by default it's - new. Later you can read the information and change status to what you see fit. After this, any attempts to edit it through API means is locked.
+latitude - decimal number representing north–south position of a point on the surface of the Earth
+longitude - decimal number representing west-east position of a point on the surface of the Earth
+height - integer number representing the shortest distance between subject's location and the sea level
 
 
 Here's a few options API can do:
