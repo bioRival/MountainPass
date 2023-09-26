@@ -44,12 +44,12 @@ It consists of:
 > **photo** - list of photos of an area with: **title** - name of an image, **photo** - the data itself
 
 Methods:
-> POST - supplied with valid json information, will create a new instance with a status new. If the email provided was not registered in database, will create a new user automatically\
-> GET - returns a full list of all instances submitted\
-> GET (with a parameter user__email) - will return all instances sent by a user with specified email,\
+> **POST** - supplied with valid json information, will create a new instance with a status new. If the email provided was not registered in database, will create a new user automatically\
+> **GET** - returns a full list of all instances submitted\
+> **GET (with a parameter user__email)** - will return all instances sent by a user with specified email,\
 > example - /submitData/?user__email=NormanJaydenFBI@gmail.com\
-> GET (with primary key) - will return one instance based on the specified ID, example - /submitData/2\
-> PATCH - edit information if status is *new*, otherwise you'll be denied. Also you can't change information about the user if provided email is already in the database
+> **GET (with primary key)** - will return one instance based on the specified ID, example - /submitData/2\
+> **PATCH** - edit information if status is *new*, otherwise you'll be denied. Also you can't change information about the user if provided email is already in the database
 
 ### JSON Example
 ```JSON
