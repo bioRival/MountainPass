@@ -24,24 +24,24 @@ Fill up Areas with a name of each region you want to keep track off, examples: "
 
 Whoever sends data from their imaginary android/OS app, will send it to **http://127.0.0.1:8000/submitData/**, this will usually influence table PerevalAdded\
 It consists of:\
-> beauty_title - prefix to a title, if necessary\
-> title - title of a mountain pass or other area\
-> other_titles - alternative title or some descriptors, if necessary, such as (north-west) or (far away)\
-> connect - a mystery, something you shouldn't touch\
-> spring - difficulty of moving through the area during respective seasons, possible choices - 00 (unknown), 1A, 1B, 2A, 2B, 3A, 3B\
-> summer - same as above\
-> autumn - same as above\
-> winter - same as above\
-> status - possible choices: new, pending, accepted, rejected. When recieved from a user, by default it's - new. Later you can read the information and change status to what you see fit. After this, any attempts to edit > > it through API means is locked.
-> latitude - decimal number representing north–south position of a point on the surface of the Earth
-> longitude - decimal number representing west-east position of a point on the surface of the Earth
-> height - integer number representing the shortest distance between subject's location and the sea level
-> email - email of the user, must be unique, duplicates not allowed
-> phone - phone number of a user
-> surname - surname of a user
-> firstname - firstname of a user
-> patronymic - patronymic of a user, if necessary
-> photo - list of photos of an area with: title - name of an image, photo - the data itself
+> **beauty_title** - prefix to a title, if necessary\
+> **title** - title of a mountain pass or other area\
+> **other_titles** - alternative title or some descriptors, if necessary, such as (north-west) or (far away)\
+> **connect** - a mystery, something you shouldn't touch\
+> **spring** - difficulty of moving through the area during respective seasons, possible choices - 00 (unknown), 1A, 1B, 2A, 2B, 3A, 3B\
+> **summer** - same as above\
+> **autumn** - same as above\
+> **winter** - same as above\
+> **status** - possible choices: new, pending, accepted, rejected. When recieved from a user, by default it's - new. Later you can read the information and change status to what you see fit. After this, any attempts to edit it through API means is locked.\
+> **latitude** - decimal number representing north–south position of a point on the surface of the Earth\
+> **longitude** - decimal number representing west-east position of a point on the surface of the Earth\
+> **height** - integer number representing the shortest distance between subject's location and the sea level\
+> **email** - email of the user, must be unique, duplicates not allowed\
+> **phone** - phone number of a user\
+> **surname** - surname of a user\
+> **firstname** - firstname of a user\
+> **patronymic** - patronymic of a user, if necessary\
+> **photo** - list of photos of an area with: title - name of an image, photo - the data itself
 
 
 Here's a few options API can do:
