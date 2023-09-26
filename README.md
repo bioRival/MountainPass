@@ -1,5 +1,5 @@
 # MountainPass
-Learning project, REST API on Django backend of imaginary android/OS app for sending information about mountain passes
+Learning project, REST API on Django, backend of imaginary android/OS app for sending information about mountain passes
 
 ### Installation
 Use any IDE (integrated development environment) that supports Python, PyCharm - recommended.\
