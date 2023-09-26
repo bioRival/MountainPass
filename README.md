@@ -47,6 +47,7 @@ It consists of:
 > **surname** - surname of a user\
 > **firstname** - firstname of a user\
 > **patronymic** - patronymic of a user, if necessary\
+> \
 > **photo** - list of photos of an area with: **title** - name of an image, **photo** - the data itself
 
 Methods:
