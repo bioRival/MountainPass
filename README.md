@@ -44,13 +44,36 @@ It consists of:\
 > **photo** - list of photos of an area with: **title** - name of an image, **photo** - the data itself
 
 Methods:\
-POST - supplied with valid json information, will create a new instance with a status new. If the email provided was not registered in database, will create a new user automatically\
-GET - returns a full list of all instances submitted\
-GET (with a parameter user__email) - will return all instances sent by a user with specified email, example - /submitData/?user__email=NormanJaydenFBI@gmail.com\
-GET (with primary key) - will return one instance based on the specified ID, example - /submitData/2\
-PATCH - edit information if status is *new*, otherwise you'll be denied. Also you can't change information about the user if provided email is already in the database
+> POST - supplied with valid json information, will create a new instance with a status new. If the email provided was not registered in database, will create a new user automatically\
+> GET - returns a full list of all instances submitted\
+> GET (with a parameter user__email) - will return all instances sent by a user with specified email,\
+> example - /submitData/?user__email=NormanJaydenFBI@gmail.com\
+> GET (with primary key) - will return one instance based on the specified ID, example - /submitData/2\
+> PATCH - edit information if status is *new*, otherwise you'll be denied. Also you can't change information about the user if provided email is already in the database
 
-
-Here's a few options API can do:
-submitData/ POST - if sent with valid information, will save 
+### JSON Example
+> {\
+>     "beauty_title": "pass",\
+>     "title": "New Big Test",\
+>     "other_titles": "hmmm",\
+>     "connect": "",\
+>     "spring": "1A",\
+>     "summer": "1A",\
+>     "autumn": "1B",\
+>     "winter": "00",\
+>     "coords": {\
+>         "latitude": 13412.314,\
+>         "longitude": 4134.24323,\
+>         "height": 12432\
+>     },\
+>     "status": "1",\
+>     "author": {\
+>         "email": "summer@gmail.com",\
+>         "phone": "+123412",\
+>         "surname": "Sanchez",\
+>         "firstname": "Morty",\
+>         "patronymic": "Jerryvich"\
+>     },\
+>     "photos": [{"photo":"<img1>", "name":"Eagles Eye"}, {"photo":"<img2>", "name":"Bear Claw"}]\
+> }
 
