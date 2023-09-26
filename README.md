@@ -9,7 +9,7 @@ Install and run PostgreSQL or other database of your choice. Find file mpass/mpa
 > FSTR_DB_LOGIN = "postgres"\
 > FSTR_DB_PASS = "jenga"
 
-Now we want to create tables in the database. In your IDE go to mpass folder and run commands:\
+Now we want to create tables in the database. In your IDE go to mpass folder and run commands:
 > python manage.py makemigrations\
 > python manage.py migrate
 
