@@ -23,7 +23,7 @@ Fill up Activity types with what fits you, examples: "on foot", "bike", "climbin
 Fill up Areas with a name of each region you want to keep track off, examples: "Himalayas", "Alps", "Umbrail Pass"
 
 Whoever sends data from their imaginary android/OS app, will send it to **http://127.0.0.1:8000/submitData/**, this will usually influence table PerevalAdded\
-It consists of:\
+It consists of:
 > **beauty_title** - prefix to a title, if necessary\
 > **title** - title of a mountain pass or other area\
 > **other_titles** - alternative title or some descriptors, if necessary, such as (north-west) or (far away)\
@@ -43,7 +43,7 @@ It consists of:\
 > **patronymic** - patronymic of a user, if necessary\
 > **photo** - list of photos of an area with: **title** - name of an image, **photo** - the data itself
 
-Methods:\
+Methods:
 > POST - supplied with valid json information, will create a new instance with a status new. If the email provided was not registered in database, will create a new user automatically\
 > GET - returns a full list of all instances submitted\
 > GET (with a parameter user__email) - will return all instances sent by a user with specified email,\
