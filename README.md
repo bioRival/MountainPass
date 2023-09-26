@@ -28,10 +28,11 @@ beauty_title - prefix to a title, if necessary
 title - title of a mountain pass or other area
 other_titles - alternative title or some descriptors, if necessary, such as (north-west) or (far away)
 connect - a mystery, something you shouldn't touch
-spring
-summer
-autumn
-winter
+spring - difficulty of moving through the area during respective seasons, possible choices - 00 (unknown), 1A, 1B, 2A, 2B, 3A, 3B
+summer - same as above
+autumn - same as above
+winter - same as above
+status - possible choices: new, pending, accepted, rejected. When recieved from a user, by default it's - new. Later you can read the information and change status to what you see fit. After this, any attempts to edit it through API means is locked.
 
 
 Here's a few options API can do:
