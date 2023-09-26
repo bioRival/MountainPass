@@ -58,6 +58,7 @@ Methods:
 > **GET (with primary key)** - will return one instance based on the specified ID, example - /submitData/2\
 > **PATCH** - edit information if status is *new*, otherwise you'll be denied. Also you can't change information about the user if provided email is already in the database
 
+To get a full description of API with Swagger module go to **http://127.0.0.1:8000/docs/**
 ### JSON Example
 ```JSON
 {
