@@ -18,7 +18,7 @@ That's it.
 ### How To Use
 You want to fill up your tables. In browser, go to **http://127.0.0.1:8000/admin/**, log in as superuser:
 > login: biorival\
-> password: jenga\
+> password: jenga
 
 Fill up Activity types with what fits you, examples: "on foot", "bike", "climbing"\
 Fill up Areas with a name of each region you want to keep track off, examples: "Himalayas", "Alps", "Umbrail Pass"
