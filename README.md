@@ -52,28 +52,30 @@ Methods:\
 > PATCH - edit information if status is *new*, otherwise you'll be denied. Also you can't change information about the user if provided email is already in the database
 
 ### JSON Example
-> {\
->     "beauty_title": "pass",\
->     "title": "New Big Test",\
->     "other_titles": "hmmm",\
->     "connect": "",\
->     "spring": "1A",\
->     "summer": "1A",\
->     "autumn": "1B",\
->     "winter": "00",\
->     "coords": {\
->         "latitude": 13412.314,\
->         "longitude": 4134.24323,\
->         "height": 12432\
->     },\
->     "status": "1",\
->     "author": {\
->         "email": "summer@gmail.com",\
->         "phone": "+123412",\
->         "surname": "Sanchez",\
->         "firstname": "Morty",\
->         "patronymic": "Jerryvich"\
->     },\
->     "photos": [{"photo":"<img1>", "name":"Eagles Eye"}, {"photo":"<img2>", "name":"Bear Claw"}]\
-> }
+```JSON
+{
+    "beauty_title": "pass",
+    "title": "New Big Test",
+    "other_titles": "hmmm",
+    "connect": "",
+    "spring": "1A",
+    "summer": "1A",
+    "autumn": "1B",
+    "winter": "00",
+    "coords": {
+        "latitude": 13412.314,
+        "longitude": 4134.24323,
+        "height": 12432
+    },
+    "status": "1",
+    "author": {
+        "email": "summer@gmail.com",
+        "phone": "+123412",
+        "surname": "Sanchez",
+        "firstname": "Morty",
+        "patronymic": "Jerryvich"
+    },
+    "photos": [{"photo":"<img1>", "name":"Eagles Eye"}, {"photo":"<img2>", "name":"Bear Claw"}]
+}
+```
 
